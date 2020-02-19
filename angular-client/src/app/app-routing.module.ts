@@ -8,6 +8,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { DashboardComponent } from './masterdata-management/dashboard/dashboard.component';
 import { MyAccountComponent } from './masterdata-management/my-account/my-account.component';
 import { UserManagementComponent } from './masterdata-management/user-management/user-management.component';
+import { AppConstant } from './constants/app-constant';
 
 
 const routes: Routes = [
@@ -16,19 +17,19 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'forgotPassword',
+    path: AppConstant.LOGIN_URL,
+    component: LoginComponent
+  },
+  {
+    path: AppConstant.FORGOT_PASSWORD_URL,
     component: ForgotPasswordComponent
   },
   {
-    path: 'forgotPasswordComplete',
+    path: AppConstant.FORGOT_PASSWORD_COMPLETE_URL,
     component: ForgotPasswordCompleteComponent
   },
   {
-    path: 'logout',
-    component: LogoutComponent
-  },
-  {
-    path: 'masterdataManagement',
+    path: AppConstant.MASTER_MANAGEMENT_URL,
     component: MasterdataManagementComponent,
     children: [
       {
@@ -36,14 +37,22 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
-        path: 'myAccount',
+        path: AppConstant.DASHBOARD_URL,
+        component: DashboardComponent
+      },
+      {
+        path: AppConstant.MY_ACCCOUNT_URL,
         component: MyAccountComponent
       },
       {
-        path: 'userManagement',
+        path: AppConstant.USER_MANAGEMENT_URL,
         component: UserManagementComponent
       }
     ]
+  },
+  {
+    path: '**',
+    component: LoginComponent
   }
 ];
 

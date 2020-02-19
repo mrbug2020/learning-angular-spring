@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppConstant } from '../constants/app-constant';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(formData: any) {
     console.log(formData);
-    this.router.navigate(['/masterdataManagement']);
+    this.router.navigate([AppConstant.MASTER_MANAGEMENT_URL]);
   }
 }

@@ -4,10 +4,10 @@
     <div id="menu" (click)="toggleHeaderMenu()">
         <div class="userid">luyenlv@angular.com<span class="down"></span></div>
         <ul id="s-menu" class="d-menu" [ngClass]="{'show': !isHeaderMenuClose}">
-            <li [routerLink]="['/masterdataManagement']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
+            <li [routerLink]="['/MasterdataManagement']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
                 true}"><a ><span class="icon-menu menu_db"></span>Dashboard</a></li>
-            <li [routerLink]="['myAccount']" routerLinkActive="router-link-active" ><a ><span class="icon-menu menu_account"></span>My Account</a></li>
-            <li [routerLink]="['userManagement']" routerLinkActive="router-link-active" ><a ><span class="icon-menu menu_setting"></span>User management</a></li>
+            <li [routerLink]="['MyAccount']" routerLinkActive="router-link-active" ><a ><span class="icon-menu menu_account"></span>My Account</a></li>
+            <li [routerLink]="['UserManagement']" routerLinkActive="router-link-active" ><a ><span class="icon-menu menu_setting"></span>User management</a></li>
             <li (click)="handlerLogout()"><a><span class="icon-menu menu_logout"></span>Logout</a></li>
         </ul>
     </div><!-- menu -->

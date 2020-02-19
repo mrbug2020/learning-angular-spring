@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LeftMenuService } from 'src/app/services/left-menu.service';
 
 @Component({
   selector: 'app-user-management',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor() { }
+  constructor(public leftMenuService: LeftMenuService) { 
+    this.leftMenuService.isDashboard = false;
+  }
 
   ngOnInit(): void {
+    
   }
 
 }

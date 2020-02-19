@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppConstant } from '../constants/app-constant';
 
 @Component({
   selector: 'app-forgot-password',
@@ -25,7 +26,7 @@ export class ForgotPasswordComponent implements OnInit {
     // TODO send email
     console.log(email);
     console.log(this.forgotPasswordForm);
-    this.router.navigate(['forgotPasswordComplete']);
+    this.router.navigate([AppConstant.FORGOT_PASSWORD_COMPLETE_URL]);
   }
 
 }
