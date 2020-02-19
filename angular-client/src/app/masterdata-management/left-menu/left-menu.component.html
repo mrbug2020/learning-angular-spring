@@ -7,9 +7,14 @@
         </a>
     </div>
     <ul class="nav">
-        <li><a href=""><span class="icon-nav lmenu_db"></span><span class="nav-item">Dashboard</span></a></li>
-        <li><a href=""><span class="icon-nav lmenu_user"></span><span class="nav-item">My Account</span></a></li>
+        <ng-template ngFor let-menuItem [ngForOf]="leftMenuService.LMenuItems">
+            <li [routerLink]="[menuItem.path]" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
+                true}"><a><span class="icon-nav" [ngClass]="menuItem.cssClass"></span><span
+                        class="nav-item">{{menuItem.label}}</span></a></li>
+        </ng-template>
+
+        <!-- <li><a href=""><span class="icon-nav lmenu_user"></span><span class="nav-item">My Account</span></a></li>
         <li><a href=""><span class="icon-nav lmenu_table"></span><span class="nav-item">User management</span></a></li>
-        <li><a href=""><span class="icon-nav lmenu_group"></span><span class="nav-item">Group management</span></a></li>
-	</ul>
+        <li><a href=""><span class="icon-nav lmenu_group"></span><span class="nav-item">Group management</span></a></li> -->
+    </ul>
 </nav>

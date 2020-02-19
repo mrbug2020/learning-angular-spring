@@ -7,6 +7,6 @@ export class LeftMenuService {
 
   isDashboard: boolean = true;
   isLeftMenuClose: boolean = false;
-
+  LMenuItems:Array<any>;
   constructor() { }
 }
