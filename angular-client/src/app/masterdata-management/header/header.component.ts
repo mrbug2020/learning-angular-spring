@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isHeaderMenuClose: boolean = true;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  toggleHeaderMenu(){
+    this.isHeaderMenuClose = !this.isHeaderMenuClose;
+  }
+
+  handlerLogout(){
+    // TODO implement logout logic
+    this.router.navigate(["/"]);
   }
 
 }

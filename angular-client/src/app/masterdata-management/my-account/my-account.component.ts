@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LeftMenuService } from 'src/app/services/left-menu.service';
 
 @Component({
   selector: 'app-my-account',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private leftMenuService: LeftMenuService) {
+    this.leftMenuService.isDashboard = false;
+   }
 
   ngOnInit(): void {
   }

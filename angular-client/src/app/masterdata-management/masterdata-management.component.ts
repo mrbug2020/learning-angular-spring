@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { AppServiceService } from '../services/app-service.service';
+import { LeftMenuService } from '../services/left-menu.service';
 
 @Component({
   selector: 'app-masterdata-management',
   templateUrl: './masterdata-management.component.html',
   styleUrls: ['./masterdata-management.component.css']
 })
-export class MasterdataManagementComponent implements OnInit {
-
-  constructor() { }
-
+export class MasterdataManagementComponent implements OnInit, AfterViewInit {
+  
+  constructor(public appService: AppServiceService,
+    public leftMenuService: LeftMenuService) {
+  }
+  
   ngOnInit(): void {
   }
-
+  
+  ngAfterViewInit(): void {
+  }
 }

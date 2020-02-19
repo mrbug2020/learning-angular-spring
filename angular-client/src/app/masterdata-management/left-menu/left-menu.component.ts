@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LeftMenuService } from 'src/app/services/left-menu.service';
 
 @Component({
   selector: 'app-left-menu',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public leftMenuService: LeftMenuService) { }
 
   ngOnInit(): void {
+  }
+
+  toggleLeftMenu(){
+    this.leftMenuService.isLeftMenuClose = !this.leftMenuService.isLeftMenuClose;
   }
 
 }

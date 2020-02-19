@@ -1,9 +1,15 @@
-<nav id="nav">
-    <div class="btn btn-primary btn-s btn-menu">
-        <a class="menu-trigger" href="#">
+<nav id="nav" [ngClass]="{'nav-close': leftMenuService.isLeftMenuClose}">
+    <div class="btn btn-primary btn-s btn-menu" (click)="toggleLeftMenu()">
+        <a class="menu-trigger" [ngClass]="{'active': leftMenuService.isLeftMenuClose}">
             <span></span>
             <span></span>
             <span></span>
         </a>
     </div>
+    <ul class="nav">
+        <li><a href=""><span class="icon-nav lmenu_db"></span><span class="nav-item">Dashboard</span></a></li>
+        <li><a href=""><span class="icon-nav lmenu_user"></span><span class="nav-item">My Account</span></a></li>
+        <li><a href=""><span class="icon-nav lmenu_table"></span><span class="nav-item">User management</span></a></li>
+        <li><a href=""><span class="icon-nav lmenu_group"></span><span class="nav-item">Group management</span></a></li>
+	</ul>
 </nav>

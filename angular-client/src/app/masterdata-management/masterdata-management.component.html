@@ -1,5 +1,8 @@
 <app-header></app-header>
 <div class="wrap">
     <app-left-menu></app-left-menu>
-    <router-outlet></router-outlet>
+    <section class="content-area"
+        [ngClass]="{'mastermainte': leftMenuService.isDashboard, 'nav-close': leftMenuService.isLeftMenuClose}">
+        <router-outlet></router-outlet>
+    </section>
 </div>
