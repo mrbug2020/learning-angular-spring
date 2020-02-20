@@ -10,21 +10,20 @@ import { AppConstant } from 'src/app/constants/app-constant';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
+
   constructor(private appService: AppServiceService,
     public leftMenuService: LeftMenuService) {
-      this.leftMenuService.isDashboard = true;
-      const menuItem: MenuItem = {
-        key: 'DASHBOARD',
-        label: 'Dashboard',
-        path: AppConstant.DASHBOARD_URL,
-        cssClass: 'lmenu_db'
-      };
-      this.leftMenuService.LMenuItems = [menuItem];
-     }
-  
+    const menuItem: MenuItem = {
+      key: 'DASHBOARD',
+      label: 'Dashboard',
+      path: AppConstant.DASHBOARD_URL,
+      cssClass: 'lmenu_db'
+    };
+    this.leftMenuService.LMenuItems = [menuItem];
+  }
+
   ngOnInit(): void {
-    
+
   }
 
 }

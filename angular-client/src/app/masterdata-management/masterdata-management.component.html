@@ -2,7 +2,7 @@
 <div class="wrap">
     <app-left-menu></app-left-menu>
     <section class="content-area"
-        [ngClass]="{'mastermainte': leftMenuService.isDashboard, 'nav-close': leftMenuService.isLeftMenuClose}">
-        <router-outlet></router-outlet>
+        [ngClass]="{'mastermainte': isDashboard, 'nav-close': leftMenuService.isLeftMenuClose}">
+        <router-outlet (activate)='onRouterActive($event)'></router-outlet>
     </section>
 </div>

@@ -9,12 +9,15 @@ import { DashboardComponent } from './masterdata-management/dashboard/dashboard.
 import { MyAccountComponent } from './masterdata-management/my-account/my-account.component';
 import { UserManagementComponent } from './masterdata-management/user-management/user-management.component';
 import { AppConstant } from './constants/app-constant';
+import { UsersRegComponent } from './masterdata-management/user-management/users-reg/users-reg.component';
+import { GroupManagementComponent } from './masterdata-management/group-management/group-management.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    redirectTo: AppConstant.LOGIN_URL,
+    pathMatch: 'full'
   },
   {
     path: AppConstant.LOGIN_URL,
@@ -34,7 +37,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: DashboardComponent
+        redirectTo: AppConstant.DASHBOARD_URL,
+        pathMatch: 'full'
       },
       {
         path: AppConstant.DASHBOARD_URL,
@@ -47,6 +51,14 @@ const routes: Routes = [
       {
         path: AppConstant.USER_MANAGEMENT_URL,
         component: UserManagementComponent
+      },
+      {
+        path: AppConstant.USERS_REG_URL,
+        component: UsersRegComponent
+      },
+      {
+        path: AppConstant.GROUP_MANAGEMENT_URL,
+        component: GroupManagementComponent
       }
     ]
   },

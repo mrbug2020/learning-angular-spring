@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,14 @@ import { DashboardComponent } from './masterdata-management/dashboard/dashboard.
 import { MyAccountComponent } from './masterdata-management/my-account/my-account.component';
 import { UserManagementComponent } from './masterdata-management/user-management/user-management.component';
 import { HeaderComponent } from './masterdata-management/header/header.component';
+import { AppServiceService } from './services/app-service.service';
+import { AppConstant } from './constants/app-constant';
+import { LeftMenuService } from './services/left-menu.service';
+import { GroupManagementComponent } from './masterdata-management/group-management/group-management.component';
+import { GroupDetailsComponent } from './masterdata-management/group-management/group-details/group-details.component';
+import { GroupAddMemberComponent } from './masterdata-management/group-management/group-add-member/group-add-member.component';
+import { GroupNewComponent } from './masterdata-management/group-management/group-new/group-new.component';
+import { UsersRegComponent } from './masterdata-management/user-management/users-reg/users-reg.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,12 @@ import { HeaderComponent } from './masterdata-management/header/header.component
     LeftMenuComponent,
     DashboardComponent,
     MyAccountComponent,
-    UserManagementComponent
+    UserManagementComponent,
+    GroupManagementComponent,
+    GroupDetailsComponent,
+    GroupAddMemberComponent,
+    GroupNewComponent,
+    UsersRegComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +50,12 @@ import { HeaderComponent } from './masterdata-management/header/header.component
     ReactiveFormsModule,
     CommonModule,
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    AppServiceService,
+    AppConstant,
+    LeftMenuService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
