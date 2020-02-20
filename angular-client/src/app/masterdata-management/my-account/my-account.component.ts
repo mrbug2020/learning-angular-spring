@@ -11,7 +11,6 @@ import { AppConstant } from 'src/app/constants/app-constant';
 export class MyAccountComponent implements OnInit {
 
   constructor(private leftMenuService: LeftMenuService) {
-    this.leftMenuService.isDashboard = false;
     const menuItem: MenuItem = {
       key: 'MYACCOUNT',
       label: 'My Account',
@@ -19,7 +18,7 @@ export class MyAccountComponent implements OnInit {
       cssClass: 'lmenu_user'
     };
     this.leftMenuService.LMenuItems = [menuItem];
-   }
+  }
 
   ngOnInit(): void {
   }

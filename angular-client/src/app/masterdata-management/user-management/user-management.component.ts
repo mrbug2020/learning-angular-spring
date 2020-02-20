@@ -8,12 +8,11 @@ import { LeftMenuService } from 'src/app/services/left-menu.service';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor(public leftMenuService: LeftMenuService) { 
-    this.leftMenuService.isDashboard = false;
+  constructor(public leftMenuService: LeftMenuService) {
   }
 
   ngOnInit(): void {
-    
+
   }
 
 }
