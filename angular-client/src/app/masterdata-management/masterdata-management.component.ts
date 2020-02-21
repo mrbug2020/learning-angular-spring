@@ -15,7 +15,7 @@ export class MasterdataManagementComponent implements OnInit, AfterViewInit {
   isDashboard: boolean = false;
   constructor(public appService: AppServiceService,
     public uiService: UIService) {
-
+    this.uiService.initLMenuForUserGroupManag();
   }
 
   ngOnInit(): void {

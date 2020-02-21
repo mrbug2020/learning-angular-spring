@@ -11,6 +11,9 @@ import { UserManagementComponent } from './masterdata-management/user-management
 import { AppConstant } from './constants/app-constant';
 import { UsersRegComponent } from './masterdata-management/user-management/users-reg/users-reg.component';
 import { GroupManagementComponent } from './masterdata-management/group-management/group-management.component';
+import { GroupDetailsComponent } from './masterdata-management/group-management/group-details/group-details.component';
+import { GroupNewComponent } from './masterdata-management/group-management/group-new/group-new.component';
+import { GroupAddMemberComponent } from './masterdata-management/group-management/group-add-member/group-add-member.component';
 
 
 const routes: Routes = [
@@ -59,6 +62,18 @@ const routes: Routes = [
       {
         path: AppConstant.GROUP_MANAGEMENT_URL,
         component: GroupManagementComponent
+      },
+      {
+        path: AppConstant.GROUP_DETAILS_URL,
+        component: GroupDetailsComponent
+      },
+      {
+        path: AppConstant.GROUP_NEW_URL,
+        component: GroupNewComponent
+      },
+      {
+        path: AppConstant.GROUP_ADD_MEMBER_URL,
+        component: GroupAddMemberComponent
       }
     ]
   },

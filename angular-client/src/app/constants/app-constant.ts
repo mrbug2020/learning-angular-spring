@@ -11,6 +11,6 @@ export class AppConstant {
     public static readonly USERS_REG_URL: string = 'NewUsersReg';
     public static readonly GROUP_MANAGEMENT_URL: string = 'GroupManagement';
     public static readonly GROUP_NEW_URL: string = 'GroupNew';
-    public static readonly GROUP_DETAILS_URL: string = 'GroupDetails';
-    public static readonly GROUP_ADD_MEMBER_URL: string = 'GroupAddMember';
+    public static readonly GROUP_DETAILS_URL: string = 'GroupDetails/:groupName';
+    public static readonly GROUP_ADD_MEMBER_URL: string = 'GroupAddMember/:groupName';
 }

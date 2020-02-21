@@ -8,8 +8,8 @@
 </article>
 <article>
     <div class="manage-tool">
-        <h2 class="ttl">Members</h2>
-        <a href="usergroupmanage_memberplus.html"><button type="button" class="btn btn-sub">+ Add
+        <h3 class="ttl">Members</h3>
+        <a [routerLink]="['/MasterdataManagement/GroupAddMember/DAQA']"><button type="button" class="btn btn-sub">+ Add
                 member</button></a>
     </div>
     <div class="manage-list">
@@ -36,7 +36,7 @@
     </div>
 </article>
 <div class="form-btn form-btn-manage">
-    <a href="usergroupmanage.html">
+    <a [routerLink]="['/MasterdataManagement/GroupManagement']">
         <button type="button" id="change-password-cancel" class="btn btn-default btn-l">Cancel</button>
     </a>
 </div>
