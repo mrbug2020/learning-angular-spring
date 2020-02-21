@@ -17,12 +17,12 @@ import { UserManagementComponent } from './masterdata-management/user-management
 import { HeaderComponent } from './masterdata-management/header/header.component';
 import { AppServiceService } from './services/app-service.service';
 import { AppConstant } from './constants/app-constant';
-import { LeftMenuService } from './services/left-menu.service';
 import { GroupManagementComponent } from './masterdata-management/group-management/group-management.component';
 import { GroupDetailsComponent } from './masterdata-management/group-management/group-details/group-details.component';
 import { GroupAddMemberComponent } from './masterdata-management/group-management/group-add-member/group-add-member.component';
 import { GroupNewComponent } from './masterdata-management/group-management/group-new/group-new.component';
 import { UsersRegComponent } from './masterdata-management/user-management/users-reg/users-reg.component';
+import { UIService } from './services/ui.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,7 @@ import { UsersRegComponent } from './masterdata-management/user-management/users
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     AppServiceService,
     AppConstant,
-    LeftMenuService
+    UIService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LeftMenuService } from './left-menu.service';
+import { UIService } from './ui.service';
 
-describe('LeftMenuService', () => {
-  let service: LeftMenuService;
+describe('UIService', () => {
+  let service: UIService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LeftMenuService);
+    service = TestBed.inject(UIService);
   });
 
   it('should be created', () => {

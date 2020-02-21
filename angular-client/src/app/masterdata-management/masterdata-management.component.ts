@@ -1,8 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppServiceService } from '../services/app-service.service';
-import { LeftMenuService } from '../services/left-menu.service';
 import { MenuItem } from '../models/menu-item';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppConstant } from '../constants/app-constant';
+import { UIService } from '../services/ui.service';
 
 @Component({
   selector: 'app-masterdata-management',
@@ -13,7 +14,7 @@ export class MasterdataManagementComponent implements OnInit, AfterViewInit {
 
   isDashboard: boolean = false;
   constructor(public appService: AppServiceService,
-    public leftMenuService: LeftMenuService) {
+    public uiService: UIService) {
 
   }
 

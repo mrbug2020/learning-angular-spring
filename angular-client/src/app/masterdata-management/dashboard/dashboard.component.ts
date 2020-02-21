@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppServiceService } from 'src/app/services/app-service.service';
-import { LeftMenuService } from 'src/app/services/left-menu.service';
 import { MenuItem } from 'src/app/models/menu-item';
 import { AppConstant } from 'src/app/constants/app-constant';
+import { UIService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,14 +12,14 @@ import { AppConstant } from 'src/app/constants/app-constant';
 export class DashboardComponent implements OnInit {
 
   constructor(private appService: AppServiceService,
-    public leftMenuService: LeftMenuService) {
+    public uiService: UIService) {
     const menuItem: MenuItem = {
       key: 'DASHBOARD',
       label: 'Dashboard',
       path: AppConstant.DASHBOARD_URL,
       cssClass: 'lmenu_db'
     };
-    this.leftMenuService.LMenuItems = [menuItem];
+    this.uiService.lMenuItems = [menuItem];
   }
 
   ngOnInit(): void {

@@ -1,13 +1,13 @@
-<nav id="nav" [ngClass]="{'nav-close': leftMenuService.isLeftMenuClose}">
+<nav id="nav" [ngClass]="{'nav-close': uiService.isLeftMenuClose}">
     <div class="btn btn-primary btn-s btn-menu" (click)="toggleLeftMenu()">
-        <a class="menu-trigger" [ngClass]="{'active': leftMenuService.isLeftMenuClose}">
+        <a class="menu-trigger" [ngClass]="{'active': uiService.isLeftMenuClose}">
             <span></span>
             <span></span>
             <span></span>
         </a>
     </div>
     <ul class="nav">
-        <ng-template ngFor let-menuItem [ngForOf]="leftMenuService.LMenuItems">
+        <ng-template ngFor let-menuItem [ngForOf]="uiService.lMenuItems">
             <li [routerLink]="[menuItem.path]" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
                 true}"><a><span class="icon-nav" [ngClass]="menuItem.cssClass"></span><span
                         class="nav-item">{{menuItem.label}}</span></a></li>
