@@ -11,6 +11,8 @@ import { UIService } from 'src/app/services/ui.service';
 })
 export class DashboardComponent implements OnInit {
 
+  selectedValue;
+
   constructor(private appService: AppServiceService,
     public uiService: UIService) {
     const menuItem: MenuItem = {
@@ -24,6 +26,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  handlerSearchChange(event: any) {
+    console.log(event)
   }
 
 }

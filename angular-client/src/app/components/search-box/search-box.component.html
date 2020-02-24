@@ -1,0 +1,5 @@
+<div class="search_box" [ngClass]="styleClass">
+    <input #searchInput type="text" class="search" [placeholder]="placeHolder" (keyup)="handlerSearchChange($event)">
+    <span class="icon-search" (click)="handlerSearchClick(searchInput)"></span>
+    <hr>
+</div>

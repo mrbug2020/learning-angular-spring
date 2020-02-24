@@ -24,6 +24,8 @@ import { GroupNewComponent } from './masterdata-management/group-management/grou
 import { UsersRegComponent } from './masterdata-management/user-management/users-reg/users-reg.component';
 import { UIService } from './services/ui.service';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { RadioBoxComponent } from './components/radio-box/radio-box.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     GroupAddMemberComponent,
     GroupNewComponent,
     UsersRegComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    RadioBoxComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,

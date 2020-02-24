@@ -20,6 +20,7 @@ export class UIService {
     labelConfirmNo: 'Cancel',
     labelConfirmYes: 'Ok'
   };
+  radioItems = [{ value: 1, label: 'Admin', checked: true }, { value: 2, label: 'Editor' }, { value: 3, label: 'Normal' }];
 
   constructor() {
     this.confirmModelRef = this.defaultConfirm;
@@ -51,5 +52,9 @@ export class UIService {
       cssClass: 'lmenu_group'
     };
     this.lMenuItems = [userMenuItem, groupMenuItem];
+  }
+
+  getDisplayStyle(isDisplay: boolean): string {
+    return isDisplay ? 'block' : 'none';
   }
 }

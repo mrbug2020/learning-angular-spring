@@ -1,10 +1,9 @@
 <h2 class="ttl">User management</h2>
 <article>
     <div class="manage-tool">
-        <div class="search_box">
-            <input type="text" class="search" placeholder="Please input user id"><span class="icon-search"></span>
-            <hr>
-        </div>
+        <app-search-box (searchChange)="handlerSearchChange($event)" [searchDebounceTime]="500"
+            placeHolder="Please input your user id">
+        </app-search-box>
         <a [routerLink]="['/MasterdataManagement/NewUsersReg']"><button type="button" class="btn btn-sub">+ New User
                 Registration</button></a>
     </div>

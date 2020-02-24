@@ -9,6 +9,10 @@
 <div class="data-table-box">
     <div class="data-table">
     </div>
+    <br />
+    <app-radio-box [items]="uiService.radioItems" [(selectedValue)]="selectedValue"></app-radio-box>
+    <br />
+    <app-search-box (searchChange)="handlerSearchChange($event)" [searchDebounceTime]="500"></app-search-box>
 </div>
 <div class="data-table-footer">
     <div class="data-position">

@@ -1,0 +1,8 @@
+<div class="radio-box">
+    <ng-template ngFor [ngForOf]="items" let-item let-itemIndex="index" let-last>
+        <input type="radio" [name]="uuid" [value]="item.value" id="RadioID{{uuid}}-{{itemIndex}}"
+            [checked]="isChecked(item, itemIndex, last)">
+        <label for="RadioID{{uuid}}-{{itemIndex}}" class="radio"
+            (click)="handlerRadioBoxChange(item)">{{item.label ? item.label : 'RadioBox ' + (itemIndex + 1)}}</label>
+    </ng-template>
+</div>

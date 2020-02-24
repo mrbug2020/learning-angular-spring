@@ -12,8 +12,10 @@ export class MyAccountComponent implements OnInit {
 
   $test: any;
   showChangePasswordForm: boolean;
+  showChangeUserIDForm: boolean;
 
-  constructor(private uiService: UIService) {
+
+  constructor(public uiService: UIService) {
     const menuItem: MenuItem = {
       key: 'MYACCOUNT',
       label: 'My Account',
@@ -26,11 +28,8 @@ export class MyAccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeUserID() {
-    console.log(`Change UserID click at ${new Date().toLocaleDateString()}`);
-    this.uiService.openConfirmModel('Change UserID', 'Do you want to change?', 'Cancel', 'Ok').subscribe(confirm => {
-      console.log(confirm);
-    });
+  toggleChangeUserID() {
+    this.showChangeUserIDForm = !this.showChangeUserIDForm;
   }
 
   toggleChangePasswordForm() {

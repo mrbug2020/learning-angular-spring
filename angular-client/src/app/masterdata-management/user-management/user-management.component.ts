@@ -16,4 +16,8 @@ export class UserManagementComponent implements OnInit {
 
   }
 
+  handlerSearchChange(event: any) {
+    console.log(event)
+  }
+
 }
