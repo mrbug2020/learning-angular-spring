@@ -1,0 +1,26 @@
+<!--modal-window-->
+<div id="modal-content-view" [ngStyle]="{'display': getDisplayStyle()}">
+    <div class=" view-dialog">
+        <div class="dialog-tytle">
+            <span class="dialog-ttl">{{uiService.confirmModelRef.title}}</span>
+            <span class="dialog-close" (click)="handlerConfirmNo()"></span>
+        </div>
+        <!--dialog-tytle-->
+        <div class="dialog-content">
+            <div class="dialog-icon">
+                <span class="warning"></span>
+            </div>
+            <p class="dialog-text dialog-text-icon">{{uiService.confirmModelRef.content}}</p>
+        </div>
+        <div class="dialog-footer">
+            <button type="button" class="btn btn-default"
+                (click)="handlerConfirmNo()">{{uiService.confirmModelRef.labelConfirmNo}}</button>
+            <button type="button" class="btn btn-primary"
+                (click)="handlerConfirmYes()">{{uiService.confirmModelRef.labelConfirmYes}}</button>
+        </div>
+        <!--dialog-footer-->
+    </div>
+    <!--view-dialog-->
+</div>
+<!--modal-content-view-->
+<div id="modal-overlay-dark" [ngStyle]="{'display': getDisplayStyle()}"></div>

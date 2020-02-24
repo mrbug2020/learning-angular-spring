@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MenuItem } from '../models/menu-item';
 import { AppConstant } from '../constants/app-constant';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { ConfirmModelRef } from '../models/confirm-model-ref';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,31 @@ export class UIService {
 
   isLeftMenuClose: boolean = false;
   lMenuItems: Array<MenuItem> = [];
-  constructor() { }
+  isConfirmSubject = new Subject<boolean>();
+  confirmModelRef: ConfirmModelRef;
+  isShowConfirmModel: boolean;
+  defaultConfirm: any = {
+    title: 'Title',
+    content: 'Content',
+    labelConfirmNo: 'Cancel',
+    labelConfirmYes: 'Ok'
+  };
+
+  constructor() {
+    this.confirmModelRef = this.defaultConfirm;
+  }
+
+  openConfirmModel(title?: any, content?: any, labelConfirmNo?: any, labelConfirmYes?: any) {
+    this.confirmModelRef = Object.assign(this.defaultConfirm, {
+      title: title ? title : this.defaultConfirm.title,
+      content: content ? content : this.defaultConfirm.content,
+      labelConfirmNo: labelConfirmNo ? labelConfirmNo : this.defaultConfirm.labelConfirmNo,
+      labelConfirmYes: labelConfirmYes ? labelConfirmYes : this.defaultConfirm.labelConfirmYes
+    })
+    this.isShowConfirmModel = true;
+    this.isConfirmSubject = new Subject<boolean>();
+    return this.isConfirmSubject.asObservable();
+  }
 
   initLMenuForUserGroupManag() {
     const userMenuItem: MenuItem = {

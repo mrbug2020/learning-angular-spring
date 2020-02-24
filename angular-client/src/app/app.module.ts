@@ -23,6 +23,7 @@ import { GroupAddMemberComponent } from './masterdata-management/group-managemen
 import { GroupNewComponent } from './masterdata-management/group-management/group-new/group-new.component';
 import { UsersRegComponent } from './masterdata-management/user-management/users-reg/users-reg.component';
 import { UIService } from './services/ui.service';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { UIService } from './services/ui.service';
     GroupDetailsComponent,
     GroupAddMemberComponent,
     GroupNewComponent,
-    UsersRegComponent
+    UsersRegComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,

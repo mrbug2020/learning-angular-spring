@@ -10,6 +10,9 @@ import { UIService } from 'src/app/services/ui.service';
 })
 export class MyAccountComponent implements OnInit {
 
+  $test: any;
+  showChangePasswordForm: boolean;
+
   constructor(private uiService: UIService) {
     const menuItem: MenuItem = {
       key: 'MYACCOUNT',
@@ -21,6 +24,21 @@ export class MyAccountComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  changeUserID() {
+    console.log(`Change UserID click at ${new Date().toLocaleDateString()}`);
+    this.uiService.openConfirmModel('Change UserID', 'Do you want to change?', 'Cancel', 'Ok').subscribe(confirm => {
+      console.log(confirm);
+    });
+  }
+
+  toggleChangePasswordForm() {
+    this.showChangePasswordForm = !this.showChangePasswordForm;
+  }
+
+  getDisplayStyle() {
+    return this.showChangePasswordForm ? 'block' : 'none';
   }
 
 }

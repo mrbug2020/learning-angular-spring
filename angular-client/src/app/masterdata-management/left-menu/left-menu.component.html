@@ -8,7 +8,7 @@
     </div>
     <ul class="nav">
         <ng-template ngFor let-menuItem [ngForOf]="uiService.lMenuItems">
-            <li [routerLink]="[menuItem.path]" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact:
+            <li [routerLink]="[menuItem.path]" routerLinkActive="router-link-active active" [routerLinkActiveOptions]="{exact:
                 true}"><a><span class="icon-nav" [ngClass]="menuItem.cssClass"></span><span
                         class="nav-item">{{menuItem.label}}</span></a></li>
         </ng-template>
