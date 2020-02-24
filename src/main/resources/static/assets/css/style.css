@@ -631,6 +631,8 @@ input.switch:checked + label::after {
   position: fixed;
   width: 100%;
   z-index: 1001;
+  top: 30%;
+  left: 0;
 }
 .view-dialog {
   background: #ffffff;

@@ -32,4 +32,8 @@ export class DashboardComponent implements OnInit {
     console.log(event)
   }
 
+  showConfirmModel() {
+    this.uiService.openConfirmModel().subscribe(confirm => console.log(confirm));
+  }
+
 }

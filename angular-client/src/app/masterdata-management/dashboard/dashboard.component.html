@@ -9,10 +9,20 @@
 <div class="data-table-box">
     <div class="data-table">
     </div>
-    <br />
-    <app-radio-box [items]="uiService.radioItems" [(selectedValue)]="selectedValue"></app-radio-box>
-    <br />
-    <app-search-box (searchChange)="handlerSearchChange($event)" [searchDebounceTime]="500"></app-search-box>
+    <section class="content-area">
+        <br />
+        <app-radio-box [items]="uiService.radioItems" [(selectedValue)]="selectedValue"></app-radio-box>
+        <div class="item-text">
+            <span>Radio Box value:</span>
+            <span>{{selectedValue}}</span>
+        </div>
+        <br />
+        <app-search-box (searchChange)="handlerSearchChange($event)" [searchDebounceTime]="500"></app-search-box>
+        <br />
+        <button type="button" id="modal-open-contentview" class="btn btn-primary btn-l"
+            (click)="showConfirmModel()">Show
+            confirm model</button>
+    </section>
 </div>
 <div class="data-table-footer">
     <div class="data-position">
