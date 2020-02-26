@@ -57,10 +57,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     CommonModule,
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
-    AppServiceService,
-    AppConstant,
-    UIService
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
