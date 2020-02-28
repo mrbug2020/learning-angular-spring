@@ -13,4 +13,7 @@ export class AppConstant {
     public static readonly GROUP_NEW_URL: string = 'GroupNew';
     public static readonly GROUP_DETAILS_URL: string = 'GroupDetails/:groupName';
     public static readonly GROUP_ADD_MEMBER_URL: string = 'GroupAddMember/:groupName';
+    public static readonly API_V1_URL: string = '/api/v1';
+    public static readonly LOCAL_STORAGE_LOGIN_USER_KEY: string = 'loginUser';
+
 }

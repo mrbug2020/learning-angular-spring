@@ -14,6 +14,7 @@ import { GroupManagementComponent } from './masterdata-management/group-manageme
 import { GroupDetailsComponent } from './masterdata-management/group-management/group-details/group-details.component';
 import { GroupNewComponent } from './masterdata-management/group-management/group-new/group-new.component';
 import { GroupAddMemberComponent } from './masterdata-management/group-management/group-add-member/group-add-member.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
   {
     path: AppConstant.MASTER_MANAGEMENT_URL,
     component: MasterdataManagementComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

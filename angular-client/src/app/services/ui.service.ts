@@ -21,6 +21,7 @@ export class UIService {
     labelConfirmYes: 'Ok'
   };
   radioItems = [{ value: 1, label: 'Admin', checked: true }, { value: 2, label: 'Editor' }, { value: 3, label: 'Normal' }];
+  userEmail: string;
 
   constructor() {
     this.confirmModelRef = this.defaultConfirm;

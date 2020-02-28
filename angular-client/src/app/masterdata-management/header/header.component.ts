@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppServiceService } from 'src/app/services/app-service.service';
+import { AppConstant } from 'src/app/constants/app-constant';
+import { UIService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -9,16 +12,21 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   isHeaderMenuClose: boolean = true;
-  constructor(private router: Router) { }
+  userEmail: string;
+  constructor(private router: Router,
+    private appService: AppServiceService,
+    public uiService: UIService) {
+  }
 
   ngOnInit(): void {
   }
-  toggleHeaderMenu(){
+
+  toggleHeaderMenu() {
     this.isHeaderMenuClose = !this.isHeaderMenuClose;
   }
-
-  handlerLogout(){
-    // TODO implement logout logic
+  handlerLogout() {
+    localStorage.removeItem(AppConstant.LOCAL_STORAGE_LOGIN_USER_KEY);
+    localStorage.clear();
     this.router.navigate(["/"]);
   }
 
