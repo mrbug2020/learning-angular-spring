@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private appService: AppServiceService,
     public uiService: UIService) {
     this.loginForm = this.formBuilder.group({
-      userName: ['', Validators.email],
+      userEmail: ['', Validators.email],
       password: ['', Validators.required]
     });
   }
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(formData: any) {
-    let user: User = { id: null, userName: formData.userName, password: formData.password, role: undefined };
+    let user: User = { id: null, userEmail: formData.userEmail, password: formData.password, role: undefined };
     this.doLogin(user);
   }
 
@@ -45,14 +45,16 @@ export class LoginComponent implements OnInit {
         if (this.isRemember) {
           localStorage.setItem(AppConstant.LOCAL_STORAGE_LOGIN_USER_KEY, JSON.stringify(loginUser));
         }
-        this.uiService.userEmail = loginUser.userName;
+        this.uiService.userEmail = loginUser.userEmail;
+        this.appService.currentUser = loginUser;
         console.log(loginUser);
         this.router.navigate([AppConstant.MASTER_MANAGEMENT_URL]);
       }
       else {
         this.isLoginError = true;
       }
-    }, error => {
+    }, errorResponse => {
+      console.log(errorResponse);
       this.isLoginError = true;
     });
   }

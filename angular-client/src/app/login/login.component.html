@@ -1,7 +1,7 @@
 <div id="login">
     <div class="login-tytle">MASTER MANAGEMENT</div>
     <form [formGroup]="loginForm" class="login" (ngSubmit)="onSubmit(loginForm.value)">
-        <input type="text" class="textbox textbox-box" placeholder="ID" formControlName="userName">
+        <input type="text" class="textbox textbox-box" placeholder="ID" formControlName="userEmail">
         <input type="password" class="textbox textbox-box" placeholder="Password" formControlName="password">
         <div *ngIf="isLoginError" style="margin-bottom: 10px;">
             <label style="color: red">*Email or password not correct!</label>

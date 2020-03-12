@@ -3,19 +3,21 @@
 	<div class="form-table">
 		<label class="item-ttl">ID</label>
 		<div class="form-item">
-			<input type="text" class="textbox textbox-line" placeholder="Your ID" value="luyenlv@angular.com"
+			<input type="text" class="textbox textbox-line" placeholder="Your ID" [value]="uiService.userEmail"
 				disabled="disabled">
 			<button type="button" id="change-id" class="btn btn-sub" (click)="toggleChangeUserID()">Change ID</button>
 			<div id="change-id-form" class="frame-box"
 				[ngStyle]="{'display': uiService.getDisplayStyle(showChangeUserIDForm)}">
 				<div class="form-table">
 					<label class="item-ttl">New ID</label>
-					<input type="text" class="textbox textbox-line" placeholder="Please input your ID want to change">
+					<input type="text" class="textbox textbox-line" placeholder="Please input your ID want to change"
+						#changeUserId>
 				</div>
 				<div class="form-btn">
 					<button type="button" id="change-id-cancel" class="btn btn-default btn-l"
 						(click)="toggleChangeUserID()">Cancel</button>
-					<button type="button" class="btn btn-primary btn-l">Save</button>
+					<button type="button" class="btn btn-primary btn-l"
+						(click)="handlerChangeUserId(changeUserId)">Save</button>
 				</div>
 			</div>
 		</div>

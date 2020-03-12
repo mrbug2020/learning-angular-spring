@@ -9,6 +9,7 @@ import { AppConstant } from '../constants/app-constant';
 })
 export class AppServiceService {
 
+  currentUser: User;
   constructor(private httpClient: HttpClient) { }
 
   checkUser(user: User): Observable<User> {

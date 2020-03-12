@@ -28,6 +28,10 @@ export class MyAccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handlerChangeUserId(changeUserId: any) {
+
+  }
+
   toggleChangeUserID() {
     this.showChangeUserIDForm = !this.showChangeUserIDForm;
   }
