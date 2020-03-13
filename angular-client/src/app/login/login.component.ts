@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   }
 
   private doLogin(user: User) {
-    this.appService.checkUser(user).subscribe(loginUser => {
+    this.appService.checkLogin(user).subscribe(loginUser => {
       if (loginUser) {
         if (this.isRemember) {
           localStorage.setItem(AppConstant.LOCAL_STORAGE_LOGIN_USER_KEY, JSON.stringify(loginUser));

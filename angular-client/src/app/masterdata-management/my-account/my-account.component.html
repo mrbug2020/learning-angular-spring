@@ -5,19 +5,20 @@
 		<div class="form-item">
 			<input type="text" class="textbox textbox-line" placeholder="Your ID" [value]="uiService.userEmail"
 				disabled="disabled">
-			<button type="button" id="change-id" class="btn btn-sub" (click)="toggleChangeUserID()">Change ID</button>
+			<button type="button" id="change-id" class="btn btn-sub" (click)="toggleChangeUserEmail()">Change
+				ID</button>
 			<div id="change-id-form" class="frame-box"
-				[ngStyle]="{'display': uiService.getDisplayStyle(showChangeUserIDForm)}">
+				[ngStyle]="{'display': uiService.getDisplayStyle(showChangeUserEmailForm)}">
 				<div class="form-table">
 					<label class="item-ttl">New ID</label>
 					<input type="text" class="textbox textbox-line" placeholder="Please input your ID want to change"
-						#changeUserId>
+						#changeUserEmail>
 				</div>
 				<div class="form-btn">
 					<button type="button" id="change-id-cancel" class="btn btn-default btn-l"
-						(click)="toggleChangeUserID()">Cancel</button>
+						(click)="toggleChangeUserEmail()">Cancel</button>
 					<button type="button" class="btn btn-primary btn-l"
-						(click)="handlerChangeUserId(changeUserId)">Save</button>
+						(click)="handlerChangeUserEmail(changeUserEmail.value)">Save</button>
 				</div>
 			</div>
 		</div>
