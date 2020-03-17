@@ -29,7 +29,6 @@ export class DashboardComponent implements OnInit {
   }
 
   handlerSearchChange(event: any) {
-    console.log(event)
   }
 
   showConfirmModel() {

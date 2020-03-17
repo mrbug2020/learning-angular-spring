@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
   private doLogin(user: User) {
     this.appService.checkLogin(user).subscribe(loginUser => {
       if (loginUser) {
+        loginUser.password = user.password;
         if (this.isRemember) {
           localStorage.setItem(AppConstant.LOCAL_STORAGE_LOGIN_USER_KEY, JSON.stringify(loginUser));
         }

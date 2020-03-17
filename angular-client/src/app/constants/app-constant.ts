@@ -15,5 +15,5 @@ export class AppConstant {
     public static readonly GROUP_ADD_MEMBER_URL: string = 'GroupAddMember/:groupName';
     public static readonly API_V1_URL: string = '/api/v1';
     public static readonly LOCAL_STORAGE_LOGIN_USER_KEY: string = 'loginUser';
-
+    public static readonly EMAIL_REGEX: RegExp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 }

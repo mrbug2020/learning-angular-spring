@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit {
     this.isHeaderMenuClose = !this.isHeaderMenuClose;
   }
   handlerLogout() {
-    localStorage.removeItem(AppConstant.LOCAL_STORAGE_LOGIN_USER_KEY);
     localStorage.clear();
     this.router.navigate(["/"]);
   }

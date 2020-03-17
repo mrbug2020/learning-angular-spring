@@ -9,78 +9,21 @@
     </div>
     <div class="manage-list">
         <ul class="list">
-            <li class="list-myaccount">
-                <div class="item-text">
-                    <input type="text" class="textbox textbox-box2" placeholder="Please input your e-mail address"
-                        value="luyenlv@angular.com">
-                    <button type="button" class="btn btn-sub">Edit</button>
-                </div>
-                <div class="action">
-                    <span class="icon-trash2"></span>
-                </div>
-                <div class="radio-box">
-                    <input type="radio" name="RadioAuth1" value="radio" id="auth0-1" checked>
-                    <label for="auth0-1" class="radio">Administrator</label>
-                    <input type="radio" name="RadioAuth1" value="radio" id="auth0-2">
-                    <label for="auth0-2" class="radio">Editor</label>
-                    <input type="radio" name="RadioAuth1" value="radio" id="auth0-3">
-                    <label for="auth0-3" class="radio">Normal</label>
-                </div>
-            </li>
-            <li>
-                <div class="item-text">
-                    <input type="text" class="textbox textbox-box2" placeholder="Please input your e-mail address"
-                        value="son@angular.com">
-                    <button type="button" class="btn btn-sub">Edit</button>
-                </div>
-                <div class="action">
-                    <span class="icon-trash2"></span>
-                </div>
-                <div class="radio-box">
-                    <input type="radio" name="RadioAuth2" value="radio" id="auth1-1">
-                    <label for="auth1-1" class="radio">Administrator</label>
-                    <input type="radio" name="RadioAuth2" value="radio" id="auth1-2">
-                    <label for="auth1-2" class="radio">Editor</label>
-                    <input type="radio" name="RadioAuth2" value="radio" id="auth1-3" checked>
-                    <label for="auth1-3" class="radio">Normal</label>
-                </div>
-            </li>
-            <li>
-                <div class="item-text">
-                    <input type="text" class="textbox textbox-box2" placeholder="Please input your e-mail address"
-                        value="giang@angular.com">
-                    <button type="button" class="btn btn-sub">Edit</button>
-                </div>
-                <div class="action">
-                    <span class="icon-trash2"></span>
-                </div>
-                <div class="radio-box">
-                    <input type="radio" name="RadioAuth3" value="radio" id="auth2-1">
-                    <label for="auth2-1" class="radio">Administrator</label>
-                    <input type="radio" name="RadioAuth3" value="radio" id="auth2-2">
-                    <label for="auth2-2" class="radio">Editor</label>
-                    <input type="radio" name="RadioAuth3" value="radio" id="auth2-3" checked>
-                    <label for="auth2-3" class="radio">Normal</label>
-                </div>
-            </li>
-            <li>
-                <div class="item-text">
-                    <input type="text" class="textbox textbox-box2" placeholder="Please input your e-mail address"
-                        value="hoanganh@angular.com">
-                    <button type="button" class="btn btn-sub">Edit</button>
-                </div>
-                <div class="action">
-                    <span class="icon-trash2"></span>
-                </div>
-                <div class="radio-box">
-                    <input type="radio" name="RadioAuth4" value="radio" id="auth3-1">
-                    <label for="auth3-1" class="radio">Administrator</label>
-                    <input type="radio" name="RadioAuth4" value="radio" id="auth3-2">
-                    <label for="auth3-2" class="radio">Editor</label>
-                    <input type="radio" name="RadioAuth4" value="radio" id="auth3-3" checked>
-                    <label for="auth3-3" class="radio">Normal</label>
-                </div>
-            </li>
+            <ng-template ngFor let-user [ngForOf]="filterUser" let-index="index" [ngForTrackBy]="trackByUserId">
+                <li class="list-myaccount">
+                    <div class="item-text">
+                        <input #userEmail type="text" class="textbox textbox-box2"
+                            placeholder="Please input your e-mail address" [value]="user.userEmail">
+                        <button type="button" class="btn btn-sub"
+                            (mousedown)="handlerEmailChange(user, userEmail.value)">Edit</button>
+                    </div>
+                    <div class="action">
+                        <span class="icon-trash2"></span>
+                    </div>
+                    <app-radio-box [items]="uiService.radioItems" [selectedValue]="user.role.id"
+                        (selectedItemChange)="handlerRoleChange($event, user, index)"></app-radio-box>
+                </li>
+            </ng-template>
         </ul>
     </div>
 </article>

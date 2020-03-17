@@ -4,6 +4,8 @@ import { MenuItem } from '../models/menu-item';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppConstant } from '../constants/app-constant';
 import { UIService } from '../services/ui.service';
+import { ActivatedRoute } from '@angular/router';
+import { Role } from '../models/role';
 
 @Component({
   selector: 'app-masterdata-management',
@@ -14,11 +16,16 @@ export class MasterdataManagementComponent implements OnInit, AfterViewInit {
 
   isDashboard: boolean = false;
   constructor(public appService: AppServiceService,
-    public uiService: UIService) {
+    public uiService: UIService,
+    private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.data.subscribe(data => {
+      this.uiService.initRole(data.roles);
+    })
     this.uiService.initLMenuForUserGroupManag();
   }
 
   ngOnInit(): void {
+
   }
 
   ngAfterViewInit(): void {

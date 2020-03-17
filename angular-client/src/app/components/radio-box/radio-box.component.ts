@@ -12,11 +12,15 @@ export class RadioBoxComponent implements OnInit {
   @Input('items') items: any[];
   @Input() selectedValue: any;
   @Output() selectedValueChange = new EventEmitter();
+  @Input() selectedItem: any;
+  @Output() selectedItemChange = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+    this.uuid = `${new Date().getTime().toString()}${Math.floor(Math.random() * 10000)}`; // TODO replace with UUID
+
+  }
 
   ngOnInit(): void {
-    this.uuid = new Date().getTime().toString(); // TODO replace with UUID
   }
 
   isChecked(item: any, index: number, last: boolean): boolean {
@@ -29,6 +33,8 @@ export class RadioBoxComponent implements OnInit {
 
   handlerRadioBoxChange(item: any) {
     this.selectedValue = item.value;
-    this.selectedValueChange.emit(this.selectedValue);
+    this.selectedValueChange.emit(item.value);
+    this.selectedItem = item;
+    this.selectedItemChange.emit(item);
   }
 }

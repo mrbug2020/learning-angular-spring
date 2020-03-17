@@ -3,6 +3,8 @@ import { MenuItem } from '../models/menu-item';
 import { AppConstant } from '../constants/app-constant';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { ConfirmModelRef } from '../models/confirm-model-ref';
+import { Role } from '../models/role';
+import { AppServiceService } from './app-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +22,23 @@ export class UIService {
     labelConfirmNo: 'Cancel',
     labelConfirmYes: 'Ok'
   };
-  radioItems = [{ value: 1, label: 'Admin', checked: true }, { value: 2, label: 'Editor' }, { value: 3, label: 'Normal' }];
+  // radioItems: any[] = [{ value: 1, label: 'Admin', checked: true }, { value: 2, label: 'Editor' }, { value: 3, label: 'Normal' }];
+  radioItems: any[] = [];
   userEmail: string;
+  allRole: Role[] = [];
 
-  constructor() {
+  constructor(private appService: AppServiceService) {
     this.confirmModelRef = this.defaultConfirm;
   }
 
+  public initRole(roles: Role[]) {
+    this.allRole = roles;
+    this.buildRadioRoleItems(roles);
+  }
+
   openConfirmModel(title?: any, content?: any, labelConfirmNo?: any, labelConfirmYes?: any) {
-    this.confirmModelRef = Object.assign(this.defaultConfirm, {
+    this.confirmModelRef = this.defaultConfirm;
+    this.confirmModelRef = Object.assign({}, {
       title: title ? title : this.defaultConfirm.title,
       content: content ? content : this.defaultConfirm.content,
       labelConfirmNo: labelConfirmNo ? labelConfirmNo : this.defaultConfirm.labelConfirmNo,
@@ -57,5 +67,21 @@ export class UIService {
 
   getDisplayStyle(isDisplay: boolean): string {
     return isDisplay ? 'block' : 'none';
+  }
+
+  buildRadioRoleItems(roles: Role[]) {
+    if (!roles || roles.length == 0) {
+      return;
+    }
+    this.radioItems = roles.map((role: Role) => {
+      return {
+        value: role.id,
+        label: role.roleName
+      }
+    });
+  }
+
+  deepClone(obj: any): any {
+    return JSON.parse(JSON.stringify(obj));
   }
 }

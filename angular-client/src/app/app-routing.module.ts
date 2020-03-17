@@ -15,6 +15,7 @@ import { GroupDetailsComponent } from './masterdata-management/group-management/
 import { GroupNewComponent } from './masterdata-management/group-management/group-new/group-new.component';
 import { GroupAddMemberComponent } from './masterdata-management/group-management/group-add-member/group-add-member.component';
 import { AuthGuard } from './services/auth.guard';
+import { AppResolverService } from './services/app-resolver.service';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
     path: AppConstant.MASTER_MANAGEMENT_URL,
     component: MasterdataManagementComponent,
     canActivate: [AuthGuard],
+    resolve: { roles: AppResolverService },
     children: [
       {
         path: '',

@@ -660,6 +660,7 @@ input.switch:checked + label::after {
   right: 20px;
   top: 20px;
   width: 14px;
+  cursor: pointer;
 }
 .dialog-content {
   padding: 20px 0px;

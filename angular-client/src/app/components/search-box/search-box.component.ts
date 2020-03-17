@@ -25,7 +25,7 @@ export class SearchBoxComponent implements OnInit {
   }
 
   handlerSearchChange(event: any) {
-    if (event && event.target.value) {
+    if (event) {
       this.searchSubject.next(event.target.value);
     }
   }

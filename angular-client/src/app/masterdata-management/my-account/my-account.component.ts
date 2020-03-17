@@ -36,11 +36,11 @@ export class MyAccountComponent implements OnInit {
     if (!changeUserEmail || changeUserEmail == this.uiService.userEmail) {
       return;
     }
-    const regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    if (!regexp.test(changeUserEmail)) {
+    if (!AppConstant.EMAIL_REGEX.test(changeUserEmail)) {
       return;
     }
-    this.appService.changeUserEmail(changeUserEmail).subscribe(
+    let tmpUserChangeEmail = Object.assign(this.appService.currentUser, { userEmail: changeUserEmail });
+    this.appService.editUser(tmpUserChangeEmail).subscribe(
       data => {
         let updatedUser: User = data;
         this.appService.currentUser = updatedUser;
@@ -49,6 +49,19 @@ export class MyAccountComponent implements OnInit {
           localStorage.setItem(AppConstant.LOCAL_STORAGE_LOGIN_USER_KEY, JSON.stringify(updatedUser));
         }
         this.toggleChangeUserEmail();
+      },
+      error => console.log(error)
+    );
+  }
+
+  handlerChangeUserPassword(oldPassword: string, newPassword: string, newPasswordConfirm: string) {
+    if (!oldPassword || !newPassword || !newPasswordConfirm || !(newPassword == newPasswordConfirm)) {
+      return;
+    }
+    this.appService.changeUserPassword(oldPassword, newPassword).subscribe(
+      data => {
+        console.log(data)
+        this.toggleChangePasswordForm();
       },
       error => console.log(error)
     );
