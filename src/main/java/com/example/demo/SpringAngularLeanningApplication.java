@@ -24,9 +24,9 @@ public class SpringAngularLeanningApplication {
 	public CommandLineRunner init(UserRepository userRepository, RoleRepository roleRepository) {
 		return (args) -> {
 			LOGGER.info("-------------Init role-----------------");
-			Role adminRole = roleRepository.save(new Role(null, "Administrator", "Administrator"));
-			Role editorRole = roleRepository.save(new Role(null, "Editor", "Editor"));
-			Role normalRole = roleRepository.save(new Role(null, "Normal", "Normal"));
+			Role adminRole = roleRepository.save(new Role(1L, "Administrator", "Administrator"));
+			Role editorRole = roleRepository.save(new Role(2L, "Editor", "Editor"));
+			Role normalRole = roleRepository.save(new Role(3L, "Normal", "Normal"));
 			LOGGER.info("-------------Init users-----------------");
 			userRepository.save(new User(null, "admin@admin", "admin", adminRole));
 			userRepository.save(new User(null, "editor@admin", "editor", editorRole));

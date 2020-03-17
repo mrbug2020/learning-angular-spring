@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Role {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String roleName;
 	private String description;

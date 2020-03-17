@@ -3,14 +3,19 @@ package com.example.demo.rest.user;
 import javax.persistence.*;
 
 import com.example.demo.rest.role.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(uniqueConstraints = {
+        @UniqueConstraint(columnNames = "userEmail", name = "uniqueUserEmailConstraint")}
+)
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String userEmail;
+	@JsonIgnore
 	private String password;
 	@ManyToOne
 	@JoinColumn
