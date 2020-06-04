@@ -29,7 +29,7 @@ public class SpringAngularLeanningApplication {
 			Role normalRole = roleRepository.save(new Role(3L, "Normal", "Normal"));
 			LOGGER.info("-------------Init users-----------------");
 			userRepository.save(new User(null, "admin@admin", "admin", adminRole));
-			userRepository.save(new User(null, "editor@admin", "editor", editorRole));
+			userRepository.save(new User(null, "editor@editor", "editor", editorRole));
 			userRepository.save(new User(null, "test@test", "test", normalRole));
 		};
 	}
