@@ -13,7 +13,7 @@ http://13.76.173.23/
 Default user for testing:
   + admin@admin / admin
   + editor@editor / editor
-  + test@test / test@test
+  + test@test / test
   
 1. Start server dev\
 run file 'TrainningAngularExerciseNvminhApplication.java' as java application\
