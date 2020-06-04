@@ -1,9 +1,12 @@
 # learning-angular-spring
 #Auth: Minh, Nguyen Van
-Project 4 learning spring as backend and angular as frontend
-Live demo on VPS: 
 
-Project using: Spring Boot( Spring WebMVC, Spring JPA/Hibernate, Spring REST ) , Angular 4
+Project 4 learning spring as backend and angular as frontend
+Project using: Spring Boot( Spring WebMVC, Spring JPA/Hibernate, Spring REST ) , Angular 8
+
+Live demo on VPS: 
+http://mrbi.southeastasia.cloudapp.azure.com/
+http://13.76.173.23/
 
 Default user for testing:
   + admin@admin / admin
